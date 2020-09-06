@@ -29,7 +29,7 @@ centeritem.appendChild(inputfield);
 
 //create array
 for (i = 0; i < docWidth; i++) {
-    for (j = 0; j < docWidth; j++) {
+    for (j = 0; j < docHeight; j++) {
         cell = document.createElement("span");
         cell.innerText = ".";
         textelem.appendChild(cell);
