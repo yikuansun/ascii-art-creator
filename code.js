@@ -84,3 +84,14 @@ exportButton.innerText = "Export project";
 centeritem.appendChild(document.createElement("br")); //add line break
 centeritem.appendChild(document.createElement("br")); //add line break
 centeritem.appendChild(exportButton);
+
+//copy to clipboard button
+var clipboardButton = document.createElement("button");
+clipboardButton.addEventListener("click", function() {
+    navigator.clipboard.writeText(textelem.innerText);
+    alert("Copied to clipboard!");
+});
+clipboardButton.innerText = "Copy result to clipboard";
+centeritem.appendChild(document.createElement("br")); //add line break
+centeritem.appendChild(document.createElement("br")); //add line break
+centeritem.appendChild(clipboardButton);
