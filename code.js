@@ -1,12 +1,13 @@
 //initiate vars
-try {
-    docName = location.search.split("title=")[1].split("&")[0];
-    docWidth = parseFloat(location.search.split("width=")[1]);
-    docHeight = parseFloat(location.search.split("height=")[1]);
-}
-catch(err) {
-    location.replace("index.html");
-}
+var docName, docWidth, docHeight, bgChar;
+// read from location.search
+var searchParams = new URLSearchParams(location.search);
+// go to index.html if no search params
+if (!searchParams.get("title")) location.replace("index.html");
+docName = searchParams.get("title");
+docWidth = searchParams.get("width");
+docHeight = searchParams.get("height");
+bgChar = searchParams.get("bgChar");
 mouseDown = false;
 
 //set up the text
@@ -31,7 +32,7 @@ centeritem.appendChild(inputfield);
 for (i = 0; i < docHeight; i++) {
     for (j = 0; j < docWidth; j++) {
         cell = document.createElement("span");
-        cell.innerText = ".";
+        cell.innerText = bgChar;
         textelem.appendChild(cell);
         cell.onclick = function() {alert("wtf")};
     }

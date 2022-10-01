@@ -6,11 +6,13 @@
     <body>
         <form action="editor.html">
             <label for="title">Project name:</label>
-            <input type="text" name="title" value="Untitled-1" min="0"/><br/>
+            <input type="text" name="title" value="Untitled-1" min="0" required /><br/>
             <label for="width">Document width:</label>
-            <input type="number" name="width" value="40" min="0"/><br/>
+            <input type="number" name="width" value="40" min="0" required /><br/>
             <label for="height">Document height:</label>
-            <input type="number" name="height" value="20" min="0"/><br/>
+            <input type="number" name="height" value="20" min="0" required /><br/>
+            <label for="bgChar">Background character:</label>
+            <input type="text" name="bgChar" value="." maxlength="1" minlength="1" required /><br/>
             <input type="submit" value="Create project"/>
         </form>
     </body>
